@@ -1,0 +1,30 @@
+<main>
+	<div class="row">
+		<div class="col-4">
+			{{!-- {{>sidePanel}} --}}
+		</div>
+		<div class="col-12">
+			<div class="row" style="margin-bottom: 80px;">
+				{{#each products}}
+				<div class="col-4">
+					<div class="border my-1 p-3 home-product-item">
+						<a href="/product-details/{{_id}}">
+							<h3 style="font-size: 100px;color: #444;" class="text-center">
+								{{#if image_name}}
+								<img src="/images/{{image_name}}" alt="image not found" style="width: 150px; height: 150px;">
+								{{else}}
+								<i class="fa fa-book"></i>
+								{{/if}}
+
+
+							</h3>
+							<h5 class="text-center">{{product_name}}</h5>
+							<h6 class="text-center">${{product_price}}</h6>
+						</a>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row ">
+
+        <div class="col-md-3 no gutters">
+            <div class="userprofile border-0 justify-content-center">
+
+                <div class="userdetailsDashboard">
+                    <i class="fa fa-user" aria-hidden="true" style='font-size:100px; padding:20px'></i>
+                    <br>
+                    <h2>{{person.person_name}}</h2>
+                    <p>{{person.person_email}}</p>
+                    <p>{{person.person_phone}}</p>
+                    <p>{{person.person_address}},</p>
+                    <p>{{person.city}}</p>
+                    <p>{{person.province}} {{person.postal_code}}</p>
+                </div>
+                <a class="btn btn-primary" href="/userprofile/update">Edit profile </a><br><br>
+                <a class="btn btn-primary" href="/listproducts">List item for sale</a>
+            </div>
+
+
+        </div>
+        <div class="col-md-9 no gutters">
+            <div class="orderhistory">
+                <div class="myorders">
+                    <h2>My Orders</h2>
+                    <hr />
+
+                    <div class="table-responsive">
+                        <table class="tableUserDash">
+                            <tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                    </tr>
+                                </thead>
+                                {{#each order}}
+                                <tr>
+                                    <td>{{_id}}</td>
+                                    <td>{{formatDate order_date}}</td>
+                                    <td>
+                                        {{#each products}}
+                                        {{!-- <p>{{product_name}}</p> --}}
+                                        <p>{{#if image_name}}
+                                            <img src="/images/{{image_name}}" alt="image not found"
+                                                style="width: 10px;">
+                                            {{else}}
+                                            <i class="fa fa-book"></i>
+                                            {{/if}} {{product_name}}
+                                        </p>
+                                        {{/each}}
+
+                                    </td>
+
+                                </tr>
+                                {{/each}}
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

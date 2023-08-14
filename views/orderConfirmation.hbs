@@ -1,0 +1,29 @@
+<div class="confirm text-center">
+    <h3 class="text-center">ORDER CONFIRMATION</h3>
+    <br>
+    <h3 class="text-center">Thank you for your order!</h3>
+    <h5 class="text-center">Order Id: {{order._id}}</h5><br>
+    <div class="container d-flex align-items-center justify-content-center">
+    <table>
+        <thead>
+            <tr>
+                <th>Products</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                {{#each order.products}}
+                <p>{{#if image_name}}
+                    <img src="/images/{{image_name}}" alt="image not found" style="width: 10px;">
+                    {{else}}
+                    <i class="fa fa-book"></i>
+                    {{/if}} {{product_name}}
+                </p>
+                {{/each}}
+            </td>
+        </tbody>
+    </table>
+    </div>
+
+
+</div>

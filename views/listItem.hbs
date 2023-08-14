@@ -1,0 +1,44 @@
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h3 style="font-size: 250px;color: #444;" class="text-center"><i class="fa fa-book"></i></h3>
+    </div>
+
+    <div class="col-md-8">
+        <form id="productForm" action="/addProduct" method="POST" enctype="multipart/form-data"> {{!-- action="/addProduct" method="POST"  --}}
+            <div class="row">
+
+                <div class="col-md-12">
+                    <label>Product Name:</label>
+                    <h1><input class="form-control" name="product_name" type="text" /></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Product description:</label>
+                    <p><textarea class="form-control" name="product_description" type="text"></textarea> </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Product display image:</label>
+                    <p><input class="form-control" name="image" type="file"></input> </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Seller:</label>
+                    <p><textarea class="form-control" name="seller" type="text"></textarea> </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h6></h6><label>Price:</label><b>$<input class="form-control" name="product_price"
+                            type="text" /></b></h6>
+                </div>
+            </div>
+            <input type="submit" value="add product">
+        </form>
+    </div>
+</div>

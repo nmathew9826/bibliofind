@@ -1,0 +1,112 @@
+<div class="row">
+    <main class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Cart</h1>
+            </div>
+            <div class="col-md-9 border-right">
+                <div class="container" id="cartItemContainer">
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Sub Total</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p id="subTotal">$24.00</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Tax</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p id="tax">$3.12</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Total</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p id="total">$24.00</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a class="btn btn-primary btn-block" id="orderbtn">Order Now</a>
+                        <a class="btn btn-primary btn-block" id="clearCart">Clear</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        window.onload = () => {
+            const cart = JSON.parse(localStorage.getItem("cart"));
+            const subTotal = cart.reduce((sum, c) => sum + Number(c.selling_price), 0)
+            
+            const tax = subTotal * 0.3
+            const total = subTotal + tax
+            const html = cart.map(c => {
+                return `<div class="row border p-3 mb-4">
+                    <div class="col-md-9">
+                        <h3>${c.product_name}</h3>
+                        
+                    </div>
+                    <div class="col-md-3 text-right p-2">
+                        <p>$${c.selling_price}</p>
+                    </div>
+                </div>`
+            })
+            document.getElementById("cartItemContainer").innerHTML = html
+            document.getElementById("subTotal").innerHTML = "$" + Number(subTotal).toFixed(2)
+            document.getElementById("tax").innerHTML = "$" + Number(tax).toFixed(2)
+            document.getElementById("total").innerHTML = "$" + Number(total).toFixed(2)
+            document.getElementById("clearCart").addEventListener("click",async _ => {
+                localStorage.removeItem('cart')
+                window.location.replace('/')
+            })
+             
+            document.getElementById("orderbtn").addEventListener("click", async _ => {
+                document.getElementById("orderbtn").style.pointerEvents = "none"
+                const data = [...cart.map(c => (
+                    {
+                        product_id: c.product_id,
+                        product_price: c.product_price,
+                        product_name: c.product_name
+                    }
+                ))]
+                
+                console.log(data)
+                const res = await fetch("/order", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        products: data
+                    })
+                }),
+                    response = await res.json()
+                    //response = await res.text()               
+                if (response.order_id) {
+                    localStorage.removeItem('cart')
+                    window.location.replace('/orderConfirmation/' + response.order_id)
+                } else {
+                    console.log("hello")
+                    console.log("Error")
+                }
+            })
+        }
+    </script>
+
+    <script>
+        function removeCartItem(intput) {
+            alert(intput)
+        }
+    </script>
+</div>

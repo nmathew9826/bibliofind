@@ -1,0 +1,108 @@
+<style>
+      #editForm {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #submitButton {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      background-color: #20406b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #submitButton:hover {
+      background-color: #20406b;
+    }
+</style>
+<div class="row">
+    <main class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h3 style="font-size: 250px;color: #444;" class="text-center"><i class="fa fa-user"></i></h3>
+            </div>
+
+            <div class="col-md-8">
+                <form id="editForm" method="post" action="/userprofile/update/{{person._id}}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Full Name:</label>
+                            <input class="form-control" name="person_name" type="text" value="{{person.person_name}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Email:</label>
+                            <input disabled class="form-control" name="person_email" type="text" value="{{person.person_email}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Phone:</label>
+                            <input class="form-control" name="person_phone" type="tel"
+                                value="{{person.person_phone}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Street Address:</label>
+                            <input class="form-control" name="person_address" type="text"
+                                value="{{person.person_address}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>City:</label>
+                            <input class="form-control" name="city" type="text" value="{{person.city}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Province:</label>
+                            <input class="form-control" name="province" type="text" value="{{person.province}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Country:</label>
+                            <input class="form-control" name="country" type="text" value="{{person.country}}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Postal Code:</label>
+                            <input class="form-control" name="postal_code" type="text" value="{{person.postal_code}}" />
+                        </div>
+                    </div>
+
+                    <input id="submitButton" type="submit" value="update profile">
+                </form>
+            </div>
+    </main>
+</div>

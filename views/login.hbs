@@ -1,0 +1,32 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign In </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      
+    </div>
+
+    <!-- Login Form -->
+
+    {{#if error}}
+      <h5 class="text-danger">{{error}}</h5>
+    {{/if}}
+    <form action="/login" method="POST">
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      
+    </form>
+    <a  href = "/registration">
+    <input type="submit" class="fadeIn fourth" value="Sign UP"> </a>
+    
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a  href="/forgotPassword" class="underlineHover" href="#">Forgot Password?</a>
+      
+    </div>
+
+  </div>
+</div>

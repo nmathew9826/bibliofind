@@ -1,0 +1,202 @@
+<style>
+    .founders-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        display: grid;
+    }
+
+    .founder {
+        margin: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .card-text,
+    .hero {
+        font-size: 14px;
+
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card-img-top {
+        padding: 20px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .about {
+        text-align: center;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: 990px) {
+        .founders-cards {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        .founders-cards {
+            grid-template-columns: 1fr;
+            display: grid;
+        }
+    }
+</style>
+
+<div class="row">
+    <div class="about">
+        <p class="hero">"Welcome to your new favorite digital destination for all things ecommerce books. We're more
+            than
+            just a website; we're your all-inclusive resource to stay ahead of the curve in the
+            ever-changing world of online commerce.Our website is a platform for all readers where you can
+            sell/rent books of your choice."</p>
+    </div>
+
+    <div class="aboutUsDetailsContainer">
+
+        <div class="container mt-5">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/userf.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body">
+
+                            <p class="card-text"><strong>Neenu Mathew</strong><br><br>
+                                CEO and web developer<br><br>
+                                Bachelors in ECE , graduate in Computer Applications
+                                development and
+                                Database Applications Developer. <br><br>
+                                "This website is created with the vision of providing valuable information and
+                                resources to book readers."
+                                <br><br>
+                                <a href="https://www.linkedin.com/in/neenumathew34/"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-linkedin"></i></a>
+                                &nbsp;&nbsp;<a href="mailto:neenumathew66@gmail.com"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-paper-plane"></i></a>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/userf.png" class="card-img-top" alt="Image 2">
+                        <div class="card-body">
+
+                            <p class="card-text"><strong>Elsmary Denny Malakaran</strong> <br><br>
+                                CEO and web developer<br><br>
+                                Bachelors in ECE , graduate in Computer applications.
+                                development<br><br>
+                                "This website aims to enhance the reading habits and support interested readers."
+                                <br><br>
+                                <a href="www.linkedin.com/in/elsmary-denny-malakaran-1ab27b214"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-linkedin"></i></a>
+                                &nbsp;&nbsp;<a href="mailto:Edennymalakaran6920@conestogac.on.ca"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-paper-plane"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/userm.png" class="card-img-top" alt="Image 3">
+                        <div class="card-body">
+
+                            <p class="card-text"><strong>Christy Oommen Varghese</strong><br><br>
+                                CEO and web developer<br><br>
+                                Bachelors in CSE , graduate in Computer applications
+                                development<br><br>
+                                "BiblioFind focus to improve reusability of books in the society"<br><br>
+                                <a href="https://www.linkedin.com/in/chrisb2b"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-linkedin"></i></a>
+                                &nbsp;&nbsp;<a href="mailto:christyoommenva6739@conestogac.on.ca"
+                                    style="text-decorations:none; color:inherit;"><i class="fa fa-paper-plane"></i></a>
+
+                            </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{!-- <div class="founders-cards">
+            <div class="founder">
+                <img width="200px" height="200px">
+                <p><strong>Neenu Mathew</strong><br><br>
+                    Role:Founder and web developer<br>
+                    Education and Expertise: Bachelors in ECE , graduate in Computer Applications development and
+                    Database Applications Developer. <br>
+                    3 years experience as C# developer<br>
+                    Hello, I'm Neenu Mathew, and I'm the proud founder and web developer of this website. I started
+                    this project with the vision of providing valuable information and resources to book readers and
+                    creating a user-friendly online experience for all our visitors."
+                    Contact details:<br>
+                    <a href="mailto:neenumathew66@gmail.com">neenumathew66@gmail.com</a>
+                    <br><br>
+                    LinkedIn: <a href="https://www.linkedin.com/in/neenumathew34/">Neenu Mathew</a><br><br>
+
+
+
+
+                </p>
+
+            </div>
+            <div class="founder">
+                <img width="200px" height="200px">
+                <p><strong>Elsmary Denny Malakaran</strong> <br><br>
+                    Role:Founder and web developer<br>
+                    Education and Expertise:Bachelors in ECE , graduate in Computer applications development<br>
+                    3 years experience as QA tester<br>
+                    Hello, I'm Elsmary Denny, and I'm the proud founder and web developer of this website. I started
+                    this project with the aim to enhance the reading habit in people and provide a support to all
+                    interested readers"</p>
+                Contact details:<br>
+                <a href="mailto:"></a><br>
+                LinkedIn : <a href="www.linkedin.com/in/elsmary-denny-malakaran-1ab27b214">Elsmary Denny</a>
+                <br><br>
+
+
+            </div>
+            <div class="founder">
+                <img width="200px" height="200px">
+                <p><strong>Christy Oommen Varghese</strong><br><br>
+                    Role:Founder and web developer<br>
+                    Education and Expertise: Bachelors in CSE , graduate in Computer applications development<br>
+                    1 years experience as a Database developer<br>
+                    Hello, I'm Christy Varghese, and I'm the proud founder and web developer of this website. I
+                    started this project with the aim to increase the reusability of books among readers and
+                    sell/rent them on a needy basis.</p>
+                Contact details:<br>
+                <a href="mailto:"></a>mailID@gmail.com.<br>
+                linkedIn : <a href="https://www.linkedin.com/in/chrisb2b">Christy Oommen Varghese</a> <br><br>
+
+
+            </div>
+
+        </div> --}}
+
+
+
+    </div>
+    {{!--
+    </main> --}}
+</div>

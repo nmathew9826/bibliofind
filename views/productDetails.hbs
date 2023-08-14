@@ -1,0 +1,77 @@
+<div class="row">
+    <main class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="font-size: 250px;color: #444;" class="text-center">
+                    {{!-- <i class="fa fa-book"></i> --}}
+                    {{#if product.image_name}}
+                    <img src="/images/{{product.image_name}}" alt="image not found" style="width: 250px;">
+                    {{else}}
+                    <i class="fa fa-book"></i>
+                    {{/if}}
+
+                </h3>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="display: none;" id="productId">{{product._id}}</h1>
+                        <h1 id="productName">{{product.product_name}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>{{product.product_description}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Seller: <span id="seller">{{product.seller}}</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Price: <b>$<span id="price">{{product.product_price}}</span></b></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12 p-2">
+                                <a class="btn btn-primary" id="addToCart">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        window.onload = () => {
+            document.getElementById("addToCart").onclick = _ => {
+                const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+                const cartItemIndex = cart.findIndex(c => c.product_id == document.getElementById("productId").innerHTML)
+                console.log(cartItemIndex)
+                if (cartItemIndex > -1) {
+                    //cart[cartItemIndex].quantity = Number(cart[cartItemIndex].quantity) + Number(document.getElementById("quantity").value)
+                } else {
+                    cart.push({
+                        "product_id": document.getElementById("productId").innerHTML,
+                        "product_name": document.getElementById("productName").innerHTML,
+                        "selling_price": Number(document.getElementById("price").innerHTML)
+                    })
+                }
+                console.log(cart)
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                window.location.replace("/cart")
+            }
+        }
+    </script>
+</div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Page</title>
+  <style>
+    /* CSS styles for the registration form */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      -moz-font-feature-settings: "liga" on;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      background-color: #20406b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #20406b;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Registration Form</h2>
+  <form id="registrationForm" action="/register" method="POST"> {{!--action="/register" --}}
+    {{!-- <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <input type="submit" value="Register"> --}}
+    <div class="form-item">
+        <label for="fullname">Name:</label>
+        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+      </div>
+
+      <div class="form-item">
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" placeholder="Address" required>
+      </div>
+      <div class="form-item">
+        <label for="pcity">City:</label>
+        <input type="text" name="pcity" id="pcity" placeholder="City" required>
+      </div>
+      <div class="form-item">
+        <label for="pstate">Province:</label>
+        <input type="text" name="pstate" id="pstate" placeholder="Province" required>
+      </div>
+      <div class="form-item">
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" placeholder="Country" required>
+      </div>
+      <div class="form-item">
+        <label for="pzip">Zip Code:</label>
+        <input type="text" name="pzip" id="pzip" placeholder="Zip Code" required>
+      </div>
+      <div class="form-item">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="email@xyz.com" required>
+      </div>
+      <div class="form-item">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="AaBb1!@#$%^&*" required>
+      </div>
+      <div class="form-item">
+        <label for="pphonenumber">Tel/Mobile:</label>
+        <input type="tel" name="pphonenumber" id="pphonenumber" placeholder="XXX XXX XXXX" required>
+      </div>
+      <input class="register" type="submit" value="Register" />
+  </form>

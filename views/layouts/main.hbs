@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+	<title>BiblioFind</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/theme.css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand" href="/">BiblioFind</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				{{#navLink "/contact-us"}}Contact us{{/navLink}}
+				{{#navLink "/aboutUS"}}About us{{/navLink}}
+				
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				{{#navLink "/user-dashboard"}}My Account{{/navLink}}
+				{{#navLink "/cart"}}View Cart{{/navLink}}
+				{{#if isLoggedIn}}
+				<form id="logout_form" action="logout" method="POST">
+					<input id="logout_id" type="submit" value="Logout"></form>
+					{{else}}
+					{{#navLink "/login"}}Login{{/navLink}}
+					{{/if}}
+
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container my-3">
+		{{{body}}}
+	</div>
+
+	<footer class="footer">
+		<div>
+			<ul class="footer-social-ul list-group list-group-horizontal text-center">
+				<a href="https://www.facebook.com/profile.php?id=100094650526628" style="text-decorations:none; color:inherit;">
+					<li class="footer-social-li"><i class="fa fa-facebook"></i></li>
+				</a>
+				<a href="https://instagram.com/codecrafters99?igshid=MzRlODBiNWFlZA==" style="text-decorations:none; color:inherit;">
+					<li class="footer-social-li"><i class="fa fa-instagram"></i></li>
+				</a>
+				<a href="https://twitter.com/CodeCrafters99" style="text-decorations:none; color:inherit;">
+					<li class="footer-social-li"><i class="fa fa-twitter"></i></li>
+				</a>
+				<a href="https://youtube.com/@CodeCrafters_99" style="text-decorations:none; color:inherit;">
+					<li class="footer-social-li"><i class="fa fa-youtube"></i></li>
+				</a>				
+			</ul>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/9f553fb284.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
